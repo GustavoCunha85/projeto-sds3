@@ -1,23 +1,22 @@
 package com.devsuperior.dsvendas.dto;
 
+import com.devsuperior.dsvendas.entities.Seller;
+
 import java.io.Serializable;
 
-import com.devsuperior.dsvendas.entities.Seller;
 
 public class SaleSumDTO implements Serializable {
 	private static final long serialVersionUID = 1L;
 
 	private String sellerName;
-	private Long visited;
-	private Long deals;
+	private Double sum;
 		
 	public SaleSumDTO() {
 	}
 
-	public SaleSumDTO(Seller seller, Long visited, Long deals) {
-		sellerName = seller.getName();
-		this.visited = visited;
-		this.deals = deals;
+	public SaleSumDTO(Seller seller, Double sum) {
+		this.sellerName = seller.getName();
+		this.sum = sum;
 	}
 
 	public String getSellerName() {
@@ -28,20 +27,12 @@ public class SaleSumDTO implements Serializable {
 		this.sellerName = sellerName;
 	}
 
-	public Long getVisited() {
-		return visited;
+	public Double getSum() {
+		return sum;
 	}
 
-	public void setVisited(Long visited) {
-		this.visited = visited;
-	}
-
-	public Long getDeals() {
-		return deals;
-	}
-
-	public void setDeals(Long deals) {
-		this.deals = deals;
+	public void setSum(Double sum) {
+		this.sum = sum;
 	}
 	
-}
+}	
